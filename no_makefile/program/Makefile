@@ -1,13 +1,14 @@
-CC:=gcc
 CFLAGS:=-Wall
 OBJS:=main.o maths.o usage.o
 BIN:=calculator
 
-all:
-	$(CC) $(CFLAGS) -c main.c
-	$(CC) $(CFLAGS) -c usage.c
-	$(CC) $(CFLAGS) -c maths.c
-	$(CC) $(CFLAGS) main.o usage.o maths.o -o $(BIN)
+all:calculator
+
+$(BIN):$(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+%.o:%.c
+	$(CC) -c $(CFLAGS) $^
 
 clean:
 	rm -f $(BIN) $(OBJS)

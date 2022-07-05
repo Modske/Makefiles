@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include </home/studentas/Desktop/M_Skerba/make_3/no_makefile/program/usage.h>
-#include </home/studentas/Desktop/M_Skerba/make_3/no_makefile/program/maths.h>
+#include "usage.h"
+#include "maths.h"
 
 void actions(char operator)
 {

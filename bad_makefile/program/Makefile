@@ -1,12 +1,15 @@
-CC:=gcc
-CFLAGS:=-Wall
+CFLAGS:=-Wall -Werror
 OBJS:=main.o math_functions.o
 BIN:=calculator
 
-all:
-	$(CC) $(CFLAGS) -c main.c
-	$(CC) $(CFLAGS) -c math_functions.c
-	$(CC) $(CFLAGS) main.o math_functions.o -o $(BIN)  
+all:$(BIN)
+
+$(BIN): $(OBJS)
+	$(CC) $(CFLAGS) $^ -o $@
+
+%.o:%.c
+	$(CC) -c $(CFLAGS) $^
 
 clean:
-	rm -f $(BIN) $(OBJS)
+	$(RM) $(BIN) $(OBJS)
+
