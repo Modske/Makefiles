@@ -20,5 +20,5 @@ uninstall:
 	$(RM) $(PREFIX)/include/math_functions.h
 
 clean:
-	$(RM) -f $(LIB)
-	$(RM) -f calculator.o
+	$(RM) $(LIB)
+	$(RM) calculator.o

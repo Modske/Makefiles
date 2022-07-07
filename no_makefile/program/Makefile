@@ -11,4 +11,4 @@ $(BIN):$(OBJS)
 	$(CC) -c $(CFLAGS) $^
 
 clean:
-	rm -f $(BIN) $(OBJS)
+	$(RM) $(BIN) $(OBJS)
